@@ -1,0 +1,506 @@
+body{
+  background: rgb(217, 69, 173);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  margin: 0;
+  left: 0;
+  right: 0;
+}
+
+#logo{
+  width: 60px;
+  height: 60px;
+  background-image: url(glowéImages/glowe.logo.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 75px;
+  margin-right: 150px;
+  
+  
+}
+
+.navbar{
+  display: flex;
+  gap: 40px;
+  height:80px ;
+  background-color:white;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0px;
+  border-radius: 60px;
+  margin: auto;
+  width: 100%;
+  z-index: 2;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+button{
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  padding: 10px;
+  color: blueviolet;
+  border: none; 
+  background-color: rgb(242, 204, 240);
+  transition: transform 0.3s ease;
+}
+button:hover{
+  transform: scale(1.03);
+  background-color: #da59f1;
+}
+.search-container{
+  display: flex;
+  max-height: 40px;
+  background-color: rgb(242, 204, 240);
+  border-radius: 20px;
+  margin-left: 100px;
+  
+}
+.search-button{
+  border-radius: 0px 20px 20px 0px;
+  width: 34px;
+  padding-right: 15px;
+ 
+}
+.search-icon{
+  height: 24px;
+  
+}
+.search-bar{
+  border-radius: 20px 0px 0px 20px;
+  border: none;
+  background-color:rgb(242, 204, 240);
+}
+.modal{
+  display: none;
+  position: fixed;
+  left: 0;
+  top:0 ;
+  width: 100%;
+  height: 100%;
+  background: rgba(239, 76, 217, 0);
+}
+.modal-content{
+  background: rgba(226, 13, 223, 0.437);
+  padding: 20px;
+  width: 300px;
+  margin: 15% auto;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+.close{
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+form input{
+  width: 100px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid rgb(213, 30, 213);
+  border-radius: 10px;
+  outline: none;
+}
+form button{
+  background: rgb(232, 57, 232);
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+}
+form button:hover{
+  background: white;
+  transition: 1s;
+}
+.social-login button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  padding: 10px;
+  margin: 30px auto;
+  border: none;
+  background: rgb(249, 247, 249);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px 0px;
+  gap: 50px;
+}
+.social-login img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+.hero{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 70px;
+}
+.hero img{
+  width: 100%;
+  height:auto;
+
+}
+.overlay{
+  position:absolute;
+  color: white;
+  text-align: center;
+  top: 60%;
+  transform:translateY(-50);
+  font-family: cursive;
+  color: rgb(245, 91, 237);
+  font-weight: 900;
+  font-size: 50px;
+  line-height:0.4;
+  z-index:0 ;
+  
+}
+.cta{
+  color: azure;
+  font-size: 80px;
+  font-family: 'Franklin Gothic Medium', 'Arial  Narrow', Arial, sans-serif;
+  
+} 
+.elevate{
+  color:azure;
+  font-size: 40px;
+  font-family: cursive;
+}
+.shop{
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  color:azure;
+  background: rgb(245, 91, 237) ;
+  right: 300px;
+  position: absolute;
+}
+html{
+  scroll-behavior: smooth;
+}
+#about{
+  transition: background-color 0.5s ease-in-out;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+  color: white;
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
+
+}
+
+
+.main{
+  display:flex ;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  gap: 100px;
+  margin-top: 50px;
+}
+
+.main {
+  animation: float 1s infinite ease-in-out;
+}
+
+.lipstick{
+  height: 700px;
+  width: 700px;
+  border-radius: 20px;
+  background-image: url(glowéImages/lipstick3.webp);
+  background-size: cover;
+}
+.lipstick {
+  animation: float 1s infinite ease-in-out;
+}
+
+.lip{
+  font-size: 60px;
+  font-weight: bold;
+  margin: 600px 0px 0px 50px;
+  color: rgb(240, 32, 205);
+  font-family: cursive;
+}
+.left-side{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  
+}.perfume{
+  height: 330px;
+  width: 600px;
+  border-radius: 20px;
+  background-image: url(glowéImages/perfume\ 10.jpg);
+  background-size: cover;
+}
+.perfumes{
+  font-size: 60px;
+  font-weight: bold;
+  margin: px 0px 50px 50px;
+  color: rgb(240, 32, 205);
+  font-family: cursive;
+}
+.perfume {
+  animation: float 1s infinite ease-in-out;
+}
+
+.skincare{
+  height: 330px;
+  width: 600px;
+  border-radius: 20px;
+  background-image: url(glowéImages/3.jpg);
+  background-size: cover;
+}
+.perfume {
+  animation: float 1s infinite ease-in-out;
+}
+
+.skin{
+  font-size: 60px;
+  font-weight: bold;
+  margin: px 0px 50px 50px;
+  color: rgb(240, 32, 205);
+  font-family: cursive;
+  padding-bottom: 50px;
+}
+
+.nailpolish{
+  height: 600px;
+  width: 1000px;
+  border-radius: 20px;
+  background-image: url(glowéImages/nails.png);
+  background-size: cover;
+}
+.submain{
+  display:flex ;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  gap: 100px;
+  margin-top: 50px;
+}
+.submain {
+  animation: float 1s infinite ease-in-out;
+}
+
+.nail{
+  font-size: 60px;
+  font-weight: bold;
+  margin: 500px 0px 0px 50px;
+  color: rgb(235, 13, 180);
+  font-family: cursive;
+}
+
+.nail1{
+  height: 250px;
+  width:300px ;
+  border-radius: 15px;
+  background-size: cover;
+  background-image: url(glowéImages/nailpolish1.jpg);
+}
+
+.right-side{
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.nail2{
+  height: 250px;
+  width:300px ;
+  border-radius: 15px;
+  background-size: cover;
+  background-image: url(glowéImages/nailpolish4.jpg);
+}
+.nail2 {
+  animation: float 1s infinite ease-in-out;
+}
+
+.foundation{
+  display: flex;
+  gap: 25px;
+  margin-top: 50px;
+}
+.image{
+  height: 380px;
+  width: 300px;
+  border-radius: 20px;
+}
+.foundation1{
+  color: azure;
+  font-size: 50px;
+  font-family: cursive;
+  margin-left: 500px;
+}
+
+#blog-preview{
+  text-align: center;
+  padding: 40px 40px;
+  
+  width: fit-content;
+  margin: auto;
+  border-radius: 15PX;
+  margin-top: 50PX;
+}
+#blog-preview:hover{
+  background:rgb(241, 58, 199) ;
+}
+#blog-preview img{
+  height: 300px;
+  width: 400px;
+  border-radius: 10px;
+}
+#blog-preview h3{
+  font-family: cursive;
+}
+#blog-preview h2{
+  font-family: cursive;
+  color: aliceblue;
+}
+.blog-container{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  padding-top: 50px;
+}
+.blog-card{
+  width: 400px;
+  height: 500px;
+  box-shadow:0 10px 30px rgba(255, 20, 147, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  color: aliceblue;
+}
+.blog-content{
+  padding: 15px;
+}
+.blog-content h3{
+  margin-top: 0;
+}
+.read-more{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: aliceblue;
+  color: rgb(239, 12, 213);
+  text-decoration: none;
+  border-radius: 10px;
+  transition: ease-in-out;
+}
+.read-more:hover{
+  background: plum;
+}
+
+/* Contact Section Styles */
+.contact-section {
+  padding: 60px 20px;
+  background-color:  rgb(242, 193, 221);
+  text-align: center;
+  font-family: cursive;
+  align-items: center;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: rgb(239, 12, 213);
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color:rgb(239, 12, 213);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color:rgb(239, 12, 213);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgb(239, 12, 213);
+  outline: none;
+}
+
+.submit-btn {
+  height: 50px;
+  width: 120px;
+  background-color: rgb(239, 12, 213);
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: 260px;
+}
+
+.submit-btn:hover {
+  background-color: #8e1295;
+}
+.site-footer {
+  background-color: #eae3e3;  
+  color: #ec19c2;             
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40px;
+  bottom: 0;
+}
+.site-footer .footer-nav a {
+  color: #e71cd3;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.site-footer .footer-nav a:hover {
+  color: #e77eec; 
+}
+
+

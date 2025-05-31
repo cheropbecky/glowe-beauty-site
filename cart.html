@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="cart.css">
+
+</head>
+<body>
+
+      <h1>Your Cart</h1>
+      <div id="cart-items"></div>
+      <h2 id="total-price"></h2>
+
+      <button onclick="window.location.href = 'shop.html'" class="Back-to-shop">Back to Shop</button>
+
+  <script >
+    function displayCart() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let cartContainer = document.getElementById("cart-items");
+      let totalPriceElement = document.getElementById("total-price");
+      let totalPrice = 0;
+
+      cartContainer.innerHTML = ""; 
+
+      cart.forEach((item, index) => {
+        cartContainer.innerHTML += 
+        `<div class = "cart.item">
+          <img src = "${item.image}" alt = "${item.name}" class ="cart-img">
+        <p>${item.name} - $${item.price} x ${item.quantity}
+      <button onclick="removeItem(${index})" class ="remove-btn">Remove</button></p>
+      </div>`;
+      totalPrice += item.price * item.quantity;
+        });
+        totalPriceElement.innerText = "Total: $" + totalPrice.toFixed(2);
+      }
+      function removeItem(index){
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+      }
+      window.onload = displayCart;
+  </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLOWÉ</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+ 
+  <nav class="navbar">
+    <div id="logo"></div>
+    
+    <button onclick="location.href='#home'">Home</button>
+    <button> <a href = "#about">About</a></button>
+
+          <button onclick="openModal()"     class="sign-up-btn">Signup</button>
+      <div id="signupModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times</span>
+            <h2>Sign Up</h2>
+            <form>
+              <input type="text" placeholder="Username"required>
+              <input type="text" placeholder="Email"required>
+            <div class="password-container">
+            <input type="password" id="password" placeholder="Enter Password">
+            <img id="togglePassword" src="glowéImages/visible.webp" alt="Show Password" style="cursor:pointer; width: 20px;">
+
+            </div>
+           </form>
+           <p>Already signed up? <a href="#">Login</a></p>
+        <div class="social-login">
+          <button onclick="signInWithGoogle()">
+            <img src="glowéImages/google_logo-google_icongoogle-128.webp" alt="Google"> Sign Up with Google
+          </button>
+
+          <button onclick="signInWithFacebook()">
+            <img src="glowéImages/1_Facebook_colored_svg_copy-128-2.webp" alt="Facebook"> Sign Up with Facebook
+          </button>
+
+          <button onclick="signInWithApple()">
+            <img src="glowéImages/16-apple-128.webp" alt="Apple"> Sign Up with Apple
+          </button>
+         </div>
+       </div>
+      </div>
+
+    <button onclick="location.href='blog.html'">Blog</button>
+    <button onclick="location.href='#contact'">Contact</button>
+     <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-bar">
+       <button class="search-button">
+        <img src="glowéImages/search.webp" alt="Search" class="search-icon">
+       </button>
+     </div>
+   </div> 
+  </nav>
+
+      <div class="hero">
+          <div class="overlay">
+
+            <h1>Welcome to Glowé</h1>
+            <p>Elevate your beauty with every brushstroke</p>
+            <button class="shop" onclick="window.location.href='shop.html'">SHOP NOW</button>
+
+          </div>
+          <img src="glowéImages/image8.webp" alt="">
+      </div>
+
+    <section id="about">
+          <h2>About Glowé</h2>
+      <p>Glowé was created to redifine beauty with elegance and simplicity. Our mission is to make beauty effortless,radiant ,and accessible.</p>
+
+    </section>
+
+    <div class="main">
+        <div class="lipstick">
+          <p class="lip">lipstick</p>
+        </div>
+      <div class="left-side">
+        <div class="perfume">
+        <p class="perfumes">Perfume</p>
+        </div>
+        <div class="skincare">
+        <p class="skin">Skincare</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="submain">
+        <div class="nailpolish">
+
+          <p class="nail">nailpolish </p>
+        </div>
+    <div class="right-side">
+
+    <div class="nail1"></div>
+    <div class="nail2"></div>
+</div>
+</div>
+
+      <h1 class="foundation1">Foundations</h1>
+      <div class="foundation">
+          <div class="image" >
+            <img src="glowéImages/foundation2.jpg" alt="Foundation"
+            width="100%"height="auto" class="image" class="image1"> 
+      </div>
+
+      <div class="image" >
+            <img src="glowéImages/foundation3.avif" alt="Foundation"
+            width="100%"height="auto" class="image" class="image1">    
+      </div>
+
+      <div class="image" >
+            <img src="glowéImages/foundation1.avif" alt="Foundation"
+            width="100%"height="auto" class="image" class="image1">    
+      </div>
+
+      <div class="image" >
+            <img src="glowéImages/foundation5.avif" alt="Foundation"
+            width="100%"height="auto" class="image" class="image1">
+          
+      </div>
+      </div>
+      </div>
+
+      <section id="blog-preview">
+        <h2>Latest Blog Post</h2>
+        <div class="blog-container">
+          <div class="blog-card">
+            <img src="glowéImages/skincare.jpg" alt="Beauty Tips">
+            <div class="blog-content">
+              <h3>Top 10 Skincare Tips</h3>
+              <p>Disover the best skincare routines for glowing....</p>
+              <a href="blog.html#post1" class="read-more">Read More</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <img src="glowéImages/image8.webp" alt="Makeup Trends">
+            <div class="blog-content">
+                <h3>Makeup Trends 2025</h3>
+                <p>Explore the latest beauty trends making waves this year....</p>
+                <a href="blog.html#post2" class="read-more">Read More</a>
+            </div>
+        </div>
+      </div>
+
+        <div class="blog-container" id="blog-preview">
+          <div class="blog-card">
+            <img src="glowéImages/foundation6.avif" alt="Foundation Trends">
+            <div class="blog-content">
+                <h3>Flawless Foundation Picks</h3>
+                <p>Discover the latest lightweight, hydrating foundations that give a natural glow....</p>
+                <a href="blog.html#post3" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-card">
+          <img src="glowéImages/lipstick 1.jpg" alt="Lipstick Trends">
+          <div class="blog-content">
+              <h3>Bold Lipstick Shades of 2025</h3>
+              <p>Matte, glossy, or satin—explore the trendiest lip colors that complement all skin tones....</p>
+              <a href="blog.html#post4" class="read-more">Read More</a>
+          </div>
+      </div>
+    </div>
+  </div>
+ </section>
+ 
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <p>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+
+  <form class="contact-form" action="#" method="post">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Glowé. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="#">Home</a> |
+      <a href="#contacts">Contact</a> |
+      <a href="#blog">Blog</a> |
+    </nav>
+  </div>
+</footer>
+
+
+<script>
+
+    function openModal(){
+      document.getElementById("signupModal").style.display = "block";
+    }
+    function closeModal(){
+      document.getElementById("signupModal").style.display = "none";
+    }
+    function signInWithGoogle() {
+      window.location.href = "https://accounts.google.com/o/oauth2/auth?..."; 
+    }
+
+    function signInWithFacebook() {
+      window.location.href = "https://www.facebook.com/dialog/oauth?...";
+    }
+
+    function signInWithApple() {
+      window.location.href = "https://appleid.apple.com/auth/authorize?...";
+    }
+
+    document.getElementById("tooglePassword").addEventListener("click",function(){
+      let passwordField = document.getElementById("password");
+      if(passwordField.type === "password"){
+        passwordField.type = "text";
+        this.src ="glowéImages/hidden.webp"
+      }else{
+        passwordField.type = "password";
+        this.src = "glowéImages/visible.webp";
+      }
+    });
+  </script>
+</body>
+</html>

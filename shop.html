@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+   <div class="navbar">
+    <img src="glowéImages/glowe.logo.png" class="logo">
+    <div>
+       <button onclick="window.location.href='cart.html'" class="view-cart">
+        🛒 View Cart <span class="cart-count">0</span>
+       </button>
+       <button onclick="window.location.href='glowé.html'" class="home">Back to Home</button>
+    </div>
+  </div>
+
+  
+  <section class="shop-preview" id="product-container"></section>
+
+  <script>
+    const productSections = [
+    {
+        category: "Lipsticks",
+        products: [
+            { name: "Shiseido", price: 25.99, image: "glowéImages/lipstick 1.jpg" },
+            { name: "Laneige", price: 24.99, image: "glowéImages/lipstick 2.jpg" },
+            { name: "Peripera", price: 21.59, image: "glowéImages/lipstick 3.jpg" },
+            { name: "Cetaphil", price: 26.19, image: "glowéImages/lipstick3.webp" },
+            { name: "Olay", price: 26.19, image: "glowéImages/lipstick.avif" },
+            { name: "Canmake", price: 20.29, image: "glowéImages/lipstick6.webp" },
+            { name: "Clio", price: 24.89, image: "glowéImages/lipstick1.avif" },
+            { name: "Etude", price: 22.22, image: "glowéImages/image4.avif" },
+           
+        ]
+    },
+    {
+        category: "Skincare",
+        products: [
+            { name: "Supergoop", price: 25.28, image: "glowéImages/1.avif" },
+            { name: "Aveeno", price: 26.22, image: "glowéImages/2.jpg" },
+            { name: "Vichy", price: 21.21, image: "glowéImages/3.jpg" },
+            { name: "Tatcha", price: 22.21, image: "glowéImages/4.avif" },
+            { name: "Bioderma", price: 23.22, image: "glowéImages/6.avif" },
+            { name: "Cuticle", price: 20.22, image: "glowéImages/7.avif" },
+            { name: "Innisfree", price: 24.92, image: "glowéImages/skin.jpg" },
+            { name: "Pixi", price: 23.96, image: "glowéImages/8.jpg" },
+           
+        ]
+    },
+    {
+        category: "Mascara",
+        products: [
+            { name: "Guerlain", price: 35.28, image: "glowéImages/masc1.avif" },
+            { name: "Lancome", price: 26.22, image: "glowéImages/masc2.avif" },
+            { name: "Tarte", price: 21.21, image: "glowéImages/masc4.jpg" },
+            { name: "Maybelline", price: 22.21, image: "glowéImages/masc5.jpg" },
+            { name: "Revlon", price: 23.22, image: "glowéImages/masc6.jpg" },
+            { name: "Essense", price: 20.22, image: "glowéImages/masc7.jpg" },
+            { name: "Pacifica", price: 24.42, image: "glowéImages/masc8.avif" },
+            { name: "Kosas", price: 30.96, image: "glowéImages/masc9.avif" },
+            
+        ]
+    },
+    {
+        category: "Perfumes",
+        products: [
+            { name: "Valentino", price: 35.28, image: "glowéImages/perfume 1.jpg" },
+            { name: "Prada", price: 26.22, image: "glowéImages/perfume 2.jpg" },
+            { name: "Givenchy", price: 21.21, image: "glowéImages/perfume 10.jpg" },
+            { name: "Dior", price: 22.21, image: "glowéImages/perfume fragrance.jpg" },
+            { name: "Gucci", price: 23.22, image: "glowéImages/perfume.jpg" },
+            { name: "Nishane", price: 20.22, image: "glowéImages/perfume5.jpg" },
+            { name: "Burberry", price: 24.42, image: "glowéImages/perfume6.jpg" },
+            { name: "Versace", price: 30.96, image: "glowéImages/perfume9.jpg" },
+            
+        ]
+    },
+];
+
+const productContainer = document.getElementById("product-container");
+
+// Dynamically generate product sections
+productSections.forEach(section => {
+    const sectionHTML = `
+        <h1 class="category-title">${section.category}</h1>
+        <div class="products">
+            ${section.products.map(product => `
+                <div class="product">
+                    <img src="${product.image}" alt="${product.name}" width="100%" height="auto" class="image">
+                    <h2>${product.name}</h2>
+                    <p>$${product.price}</p>
+                    <div class="rating">★★★★☆</div>
+                    <button onclick="addToCart('${product.name}', ${product.price}, '${product.image}')" class="cart">Add to Cart</button>
+                </div>
+            `).join('')}
+        </div>
+    `;
+    productContainer.innerHTML += sectionHTML;
+});
+
+// Cart functionality
+function addToCart(productName, price, imageUrl) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existingProduct = cart.find(item => item.name === productName);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ name: productName, price: price, quantity: 1, image: imageUrl });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert(productName + " added to cart!");
+}
+
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCount = document.querySelector('.cart-count');
+
+    if (cartCount) {
+        cartCount.textContent = totalCount;
+    }
+}
+
+
+function applyHoverEffect() {
+    let elements = document.querySelectorAll(".product");
+
+    elements.forEach(element => {
+        element.addEventListener("mouseover", () => {
+            element.classList.add("product-hover");
+        });
+
+        element.addEventListener("mouseout", () => {
+            element.classList.remove("product-hover");
+        });
+    });
+}
+
+applyHoverEffect();
+updateCartCount();
+
+  </script> 
+</body>
+</html>
